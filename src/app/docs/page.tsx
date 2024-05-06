@@ -3,6 +3,7 @@ import React from "react";
 import {Box} from "lucide-react";
 import Endpoint from "../../app/components/_endpoint"
 import Usage from "../../app/components/_usage"
+// @ts-ignore
 import detail from "../../../public/detail.png"
 import Image from "next/image";
 
@@ -10,7 +11,7 @@ const page = () => {
 
     return (
         <div className="w-full font-poppin">
-            <div className="sm:px-36 px-8 grid gap-y-10">
+            <div className="sm:px-36 px-8 pr-14 sm:pr-0 grid gap-y-10">
                 <div className="sm:pt-28 pt-20">
                     <div className="font-bold text-2xl text-yellow-600">
                         How to use it?
