@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/table";
 import {Button} from "@/components/ui/button";
 import React from "react";
+import Footer from "@/app/components/_footer";
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
@@ -30,9 +31,9 @@ interface DataTableProps<TData, TValue> {
 }
 
 export function MyanDataTable<TData, TValue>({
-                                             columns,
-                                             data,
-                                         }: DataTableProps<TData, TValue>) {
+                                                 columns,
+                                                 data,
+                                             }: DataTableProps<TData, TValue>) {
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
     );
