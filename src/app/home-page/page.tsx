@@ -1,9 +1,10 @@
-"use client"
+'use client'
 import React, {useEffect} from "react";
 import Image from "next/image";
 import country from "../../../public/myanmar_land.png"
 import {FileJson, Book} from 'lucide-react';
 import {useRouter} from "next/navigation";
+import Footer from "@/app/components/_footer";
 
 const page = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -26,7 +27,7 @@ const page = () => {
     return (
         <div className="w-full min-h-screen">
             <div
-                className="sm:flex justify-center items-center sm:pt-10 pt-16 text-justify sm:px-44">
+                className="sm:flex justify-center items-center sm:pt-10 pt-16 text-justify sm:px-44 mb-0 sm:mb-8">
                 <div className="sm:w-1/2 p-6">
                     <div>
                         <div className="text-2xl font-bold font-poppin">
@@ -87,6 +88,7 @@ const page = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
