@@ -17,7 +17,8 @@ import Loading from "../components/_loading"
 import Error from "../components/_error"
 import {ChevronDown} from "lucide-react"
 import {MyanDataTable} from "@/app/demo/Myanmar/myanDataTable";
-import { ScrollArea } from "@/components/ui/scroll-area"
+import {ScrollArea} from "@/components/ui/scroll-area"
+import Footer from "@/app/components/_footer";
 
 const page = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -128,6 +129,7 @@ const page = () => {
                     </div>
                 </div>
             )}
+            <Footer/>
         </div>
     );
 };
