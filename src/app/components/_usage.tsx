@@ -46,23 +46,15 @@ const _Usage = () => {
                 contentType: "application/json",
                 data: { zipCode: positalcode },
                 timeout: 30000,
-                success: function (response) {
-                   if (response.statusCode == 401) {
-                       $(".format").removeClass("d-none");
-                       } else {
-                           $(".format").addClass("d-none");
-                         }
-                          if (response.data != null) {
-                                resulten = response.data.en;
-                                resultmm = response.data.mm;
-                                bilddata(resulten, resultmm);
-                          }
-                        },
-                    error: function (xhr) {
-                   }
-
+                success: function (response) 
+                {
+                   console.log(response);
+                },
+                error: function (xhr) 
+                {
+                   console.log(error);
+                }
        });
-       
        `
 
     const jsSnippet = `
