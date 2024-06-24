@@ -1,8 +1,9 @@
 import React from "react";
+import Footer from "@/app/components/_footer";
 
 const page = () => {
     return (
-        <div className="grid gap-y-6 sm:pt-28 sm:px-40 pt-20 sm:pb-7 px-6 text-justify">
+        <div className="grid gap-y-6 sm:pt-28 sm:px-40 pt-20 sm:pb-7 px-6 text-justify min-h-screen font-poppin">
             <div className="text-xl font-bold font-poppin">
                 About Us
             </div>
@@ -49,6 +50,7 @@ const page = () => {
                 data. Sign up for a free API key and start integrating postal code functionality into your projects
                 today!
             </div>
+            <Footer/>
         </div>
     );
 };
