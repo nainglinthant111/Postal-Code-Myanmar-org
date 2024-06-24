@@ -44,7 +44,7 @@ const _Usage = () => {
                 type: "get",
                 dataType: "json",
                 contentType: "application/json",
-                data: { zipCode: positalcode },
+                data: { zipCode: postalCode },
                 timeout: 30000,
                 success: function (response) 
                 {
