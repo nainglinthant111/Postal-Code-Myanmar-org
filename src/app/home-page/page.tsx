@@ -82,7 +82,7 @@ const page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="sm:w-1/2 font-poppin">
+                <div className="sm:w-1/2">
                     <div className="p-4 mt-4 hidden sm:flex justify-center items-center">
                         <Image src={country} alt="logo" className="rounded-lg"/>
                     </div>

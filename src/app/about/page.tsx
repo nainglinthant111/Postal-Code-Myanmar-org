@@ -3,29 +3,29 @@ import Footer from "@/app/components/_footer";
 
 const page = () => {
     return (
-        <div className="grid gap-y-6 sm:pt-28 sm:px-40 pt-20 sm:pb-7 px-6 text-justify min-h-screen font-poppin">
-            <div className="text-xl font-bold font-poppin">
+        <div className="grid gap-y-6 sm:pt-28 sm:px-40 pt-20 sm:pb-7 px-6 text-justify min-h-screen">
+            <div className="text-xl font-bold">
                 About Us
             </div>
-            <div className="text-gray-400 font-poppin">
+            <div className="text-gray-400">
                 Welcome to Myanmar Postal Code API! We are dedicated to providing developers, businesses, and
                 individuals with access to accurate and up-to-date postal code data for locations across Myanmar. Our
                 mission is to simplify the process of integrating postal code functionality into applications, websites,
                 and software systems, empowering users to enhance their projects with reliable geographic information.
             </div>
-            <div className="text-xl font-bold font-poppin">
+            <div className="text-xl font-bold">
                 Our Vision
             </div>
-            <div className="text-gray-400 font-poppin">
+            <div className="text-gray-400">
                 At Myanmar Postal Code API, our vision is to facilitate seamless access to postal code data, enabling
                 developers to create innovative solutions that improve user experiences and streamline operations. We
                 believe in the power of technology to connect people and communities, and accurate postal code data is a
                 crucial component of this digital ecosystem.
             </div>
-            <div className="text-xl font-bold font-poppin">
+            <div className="text-xl font-bold">
                 Why Choose Us?
             </div>
-            <div className="text-gray-400 font-poppin">
+            <div className="text-gray-400">
                 <ul className="grid gap-y-1 sm:pt-2">
                     <li><span className="text-black font-bold">Accurate Data:</span> We source our postal code data from
                         official sources to ensure accuracy and reliability.
@@ -45,7 +45,7 @@ const page = () => {
                     </li>
                 </ul>
             </div>
-            <div className="text-gray-400 font-poppin sm:pb-[75px] pb-8">
+            <div className="text-gray-400 sm:pb-[75px] pb-8">
                 Join thousands of developers and businesses who rely on Myanmar Postal Code API for accurate postal code
                 data. Sign up for a free API key and start integrating postal code functionality into your projects
                 today!

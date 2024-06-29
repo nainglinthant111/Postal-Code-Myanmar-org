@@ -33,7 +33,7 @@ const _nav = ({toggleDisplay}: displayProps) => {
     return (
         <div
             className="flex justify-between fixed z-10 items-center border-b-2 p-4 px-4 sm:px-32 w-full bg-white">
-            <div className="cursor-pointer flex justify-center items-center font-poppin" onClick={gotoHome}>
+            <div className="cursor-pointer flex justify-center items-center" onClick={gotoHome}>
                 <Image src={logo} alt="logo" className="w-8 h-8"/>
                 <span className="text-xl ml-1">M</span>
                 <span className="text-base pt-1">yanmar</span>
@@ -42,7 +42,7 @@ const _nav = ({toggleDisplay}: displayProps) => {
                 <span className="text-xl ml-1">C</span>
                 <span className="text-base pt-1">ode</span>
             </div>
-            <div className="gap-10 flex font-poppin">
+            <div className="gap-10 flex">
                 <div onClick={gotoHome} className="cursor-pointer hidden sm:block text-gray-600 text-lg">
                     Home
                 </div>
