@@ -26,6 +26,8 @@ const page = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [region, setRegion] = useState<string>("01")
     // eslint-disable-next-line react-hooks/rules-of-hooks
+    const [filter, setFilter] = useState<string>("Quarters")
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [regionValue, setRegionValue] = useState("Naypyitaw Union Territory")
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const {useGetSingleRegionHook, useGetAllRegions} = useRegion();
@@ -48,6 +50,18 @@ const page = () => {
         setLangData("Myanmar")
     }
 
+    const handleFilterQuarters = () => {
+        setFilter("Quarters")
+    }
+
+    const handleFilterTownship = () => {
+        setFilter("Township")
+    }
+
+    const handleFilterPostalCode = () => {
+        setFilter("PostalCode")
+    }
+
     const handleRegionCodeSelection = (regionCode: any, regionName: any) => {
         setRegion(regionCode)
         setRegionValue(regionName)
@@ -61,7 +75,35 @@ const page = () => {
                 <div>
                     <div className="container sm:mx-auto pt-20">
                         <div className="flex justify-end gap-4">
-
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button variant="outline">
+                                        Filters
+                                        <div className="pt-1 pl-1">
+                                            <ChevronDown/>
+                                        </div>
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent className="w-56">
+                                    <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+                                        <DropdownMenuRadioItem
+                                            value="Quarters"
+                                            onClick={() => handleFilterQuarters()}>
+                                            Quarters
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem
+                                            value="Township"
+                                            onClick={() => handleFilterTownship()}>
+                                            Township
+                                        </DropdownMenuRadioItem>
+                                        <DropdownMenuRadioItem
+                                            value="PostalCode"
+                                            onClick={() => handleFilterPostalCode()}>
+                                            PostalCode
+                                        </DropdownMenuRadioItem>
+                                    </DropdownMenuRadioGroup>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button variant="outline">
@@ -122,9 +164,9 @@ const page = () => {
                             </DropdownMenu>
                         </div>
                         {langData === "Myanmar" ? (
-                            <MyanDataTable columns={myanColumns} data={singleRegion.data}/>
+                            <MyanDataTable columns={myanColumns} data={singleRegion.data} columnsValue={filter}/>
                         ) : (
-                            <DataTable columns={columns} data={singleRegion.data}/>
+                            <DataTable columns={columns} data={singleRegion.data} columnsValue={filter}/>
                         )}
                     </div>
                 </div>
