@@ -81,3 +81,9 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+html,
+body,
+:root{
+    background-color: white;
+}
