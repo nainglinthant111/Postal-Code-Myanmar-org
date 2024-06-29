@@ -30,10 +30,10 @@ const page = () => {
                 className="sm:flex justify-center items-center sm:pt-10 pt-16 text-justify sm:px-44 mb-0 sm:mb-8">
                 <div className="sm:w-1/2 p-6">
                     <div>
-                        <div className="text-2xl font-bold font-poppin">
+                        <div className="text-2xl font-bold">
                             Myanmar Postal Code API
                         </div>
-                        <div className="text-gray-400 pt-10 font-poppin">
+                        <div className="text-gray-400 pt-10">
                             Welcome to the Myanmar Postal Code API! Our API provides free access to accurate postal code
                             data
                             for locations across Myanmar. Whether you are building a website, mobile app, or integrating
@@ -41,7 +41,7 @@ const page = () => {
                             code functionality into your software, our API makes it easy to retrieve postal code
                             information
                             quickly and reliably.
-                            <ul className="sm:pt-8 grid gap-y-2 font-poppin">
+                            <ul className="sm:pt-8 grid gap-y-2">
                                 <li><span className="text-black font-bold">1.Comprehensive Data:</span> Access
                                     up-to-date postal code information for all regions in
                                     Myanmar.
