@@ -26,7 +26,7 @@ const page = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [region, setRegion] = useState<string>("01")
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [filter, setFilter] = useState<string>("Quarters")
+    const [filter, setFilter] = useState<string>("")
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [regionValue, setRegionValue] = useState("Naypyitaw Union Territory")
     // eslint-disable-next-line react-hooks/rules-of-hooks
