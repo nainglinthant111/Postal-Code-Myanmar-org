@@ -28,12 +28,14 @@ import Footer from "@/app/components/_footer";
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[];
     data: TData[];
+    columnsValue: string
 }
 
-export function MyanDataTable<TData, TValue>({
-                                                 columns,
-                                                 data,
-                                             }: DataTableProps<TData, TValue>) {
+export function MyanDataTable<TData, TValue, columnsValue>({
+                                                               columns,
+                                                               data,
+                                                               columnsValue
+                                                           }: DataTableProps<TData, TValue>) {
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
     );
@@ -53,14 +55,36 @@ export function MyanDataTable<TData, TValue>({
     return (
         <div>
             <div className="flex items-center py-4">
-                <Input
-                    placeholder="Filter Quaters..."
-                    value={table.getColumn("mm_qv_tract")?.getFilterValue() as string ?? ""}
-                    onChange={(event: any) =>
-                        table.getColumn("mm_qv_tract")?.setFilterValue(event.target.value)
-                    }
-                    className="max-w-sm"
-                />
+                {columnsValue === "Quarters" && (
+                    <Input
+                        placeholder="Filter Quaters..."
+                        value={table.getColumn("mm_qv_tract")?.getFilterValue() as string ?? ""}
+                        onChange={(event: any) =>
+                            table.getColumn("mm_qv_tract")?.setFilterValue(event.target.value)
+                        }
+                        className="max-w-sm"
+                    />
+                )}
+                {columnsValue === "Township" && (
+                    <Input
+                        placeholder="Filter Township..."
+                        value={table.getColumn("mm_town_township")?.getFilterValue() as string ?? ""}
+                        onChange={(event: any) =>
+                            table.getColumn("mm_town_township")?.setFilterValue(event.target.value)
+                        }
+                        className="max-w-sm"
+                    />
+                )}
+                {columnsValue === "PostalCode" && (
+                    <Input
+                        placeholder="Filter PostalCode..."
+                        value={table.getColumn("postal_code")?.getFilterValue() as string ?? ""}
+                        onChange={(event: any) =>
+                            table.getColumn("postal_code")?.setFilterValue(event.target.value)
+                        }
+                        className="max-w-sm"
+                    />
+                )}
             </div>
             <div className="rounded-md border">
                 <Table>
