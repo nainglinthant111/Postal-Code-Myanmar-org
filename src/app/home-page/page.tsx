@@ -7,7 +7,6 @@ import {useRouter} from "next/navigation";
 import Footer from "@/app/components/_footer";
 
 const page = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const router = useRouter()
 
     const gotoService = () => {
@@ -18,7 +17,6 @@ const page = () => {
         router.push('/demo')
     }
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
             router.prefetch('/docs')
             router.prefetch('/demo')
