@@ -1,9 +1,9 @@
 'use client'
-import React, {useState} from 'react';
-import {Box, Copy} from "lucide-react";
-import {DropdownMenuCheckboxItemProps} from "@radix-ui/react-dropdown-menu"
+import React, { useState } from 'react';
+import { Box, Copy } from "lucide-react";
+import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu"
 
-import {Button} from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import Image from "next/image";
 import Check from "../../../public/check.png";
-import {data, regionData} from "../../../Constants";
+import { data, regionData } from "../../../Constants";
 
 type Checked = DropdownMenuCheckboxItemProps["checked"]
 const _Usage = () => {
@@ -38,30 +38,27 @@ const _Usage = () => {
         setOutputAll(!outputAll)
     }
 
-    const ajaxSnippet = ` 
-       $.ajax({
-                url: "https://myanmar-postal-code.vercel.app/api/data",
-                type: "get",
-                dataType: "json",
-                contentType: "application/json",
-                data: { zipCode: postalCode },
-                timeout: 30000,
-                success: function (response) 
-                {
-                   console.log(response);
-                },
-                error: function (xhr) 
-                {
-                   console.log(error);
-                }
-       });
+    const ajaxSnippet = `$.ajax({
+   url: "https://myanmar-postal-code.vercel.app/api/data",
+   type: "get",
+   dataType: "json",
+   contentType: "application/json",
+   data: { zipCode: postalCode },
+   timeout: 30000,
+   success: function (response) 
+   {
+      console.log(response);
+   },
+   error: function (xhr) 
+   {
+      console.log(error);
+   }
+});
        `
 
-    const jsSnippet = `
-    fetch('https://myanmar-postal-code.vercel.app/api/data/myanmar/regions')
+    const jsSnippet = `fetch('https://myanmar-postal-code.vercel.app/api/data/myanmar/regions')
             .then(res=>res.json())
-            .then(json=>console.log(json))   
-    `
+            .then(json=>console.log(json))`
 
     const handleAjaxCopy = async () => {
         try {
@@ -86,7 +83,7 @@ const _Usage = () => {
     return (
         <div>
             <div className="font-bold text-2xl flex items-center gap-2">
-                <Box/>
+                <Box />
                 <div className="text-yellow-600">
                     Sample Usage
                 </div>
@@ -117,23 +114,23 @@ const _Usage = () => {
 
             <div className='mt-6'>
                 {Ajax && (
-                    <div className="bg-gray-800 text-gray-400 px-4 py-2 w-[393px] md:w-[850px] rounded-sm">
+                    <div className="bg-gray-800 text-gray-400 px-4 py-2 w-[365px] md:w-[850px] rounded-sm">
                         <div className="flex justify-end m-2">
                             {copyAjax ? (
                                 <>
-                                    <Image src={Check} alt="" className="w-6 h-6 ml-4 sm:ml-0 mr-1 sm:mr-0"/>
+                                    <Image src={Check} alt="" className="w-6 h-6 ml-4 sm:ml-0 mr-1 sm:mr-0" />
                                 </>
                             ) : (
                                 <div onClick={handleAjaxCopy}
-                                     className="cursor-pointer ml-4 sm:ml-0 mr-1 sm:mr-0 w-6 h-6">
-                                    <Copy/>
+                                    className="cursor-pointer ml-4 sm:ml-0 mr-1 sm:mr-0 w-6 h-6">
+                                    <Copy />
                                 </div>
                             )}
                         </div>
                         <div className="col-span-7">
                             <code className="flex flex-col break-words">
-                               <pre className="overflow-x-auto sm:overflow-hidden">
-                                  {ajaxSnippet}
+                                <pre className="overflow-x-auto sm:overflow-hidden">
+                                    {ajaxSnippet}
                                 </pre>
                             </code>
                         </div>
@@ -146,19 +143,19 @@ const _Usage = () => {
                         <div className="flex justify-end m-2">
                             {copyJs ? (
                                 <>
-                                    <Image src={Check} alt="" className="w-6 h-6 ml-4 sm:ml-0 mr-1 sm:mr-0"/>
+                                    <Image src={Check} alt="" className="w-6 h-6 ml-4 sm:ml-0 mr-1 sm:mr-0" />
                                 </>
                             ) : (
                                 <div onClick={handleJsCopy}
-                                     className="cursor-pointer ml-4 sm:ml-0 mr-1 sm:mr-0 w-6 h-6">
-                                    <Copy/>
+                                    className="cursor-pointer ml-4 sm:ml-0 mr-1 sm:mr-0 w-6 h-6">
+                                    <Copy />
                                 </div>
                             )}
                         </div>
                         <div className="col-span-7">
                             <code className="flex flex-col break-words">
-                               <pre className="h-60 overflow-x-auto">
-                                  {jsSnippet}
+                                <pre className="h-60 overflow-x-auto">
+                                    {jsSnippet}
                                 </pre>
                             </code>
                         </div>
@@ -182,31 +179,31 @@ const _Usage = () => {
                             <span className="pt-8 ml-8">[</span>
                             <span className="ml-12">{`{`}
                                 <span>
-                                   {data.map((item) => (
-                                       <div key={item.postal_code}>
-                                           <h2 className="flex flex-col">
-                                               <span className="ml-4">en :</span>
-                                               <span className="flex flex-col ml-12">{`{`}</span>
-                                               <span className="ml-16">region : {item.en_region}</span>
-                                               <span className="ml-16">town_township :{item.en_town_township}</span>
-                                               <span className="ml-16">qv_tract :{item.en_qv_tract}</span>
-                                               <span className="ml-12">{`}`}</span>
-                                           </h2>
-                                           <h2 className="flex flex-col">
-                                               <span className="ml-4">mm :</span>
-                                               <span className="flex flex-col ml-12">{`{`}</span>
-                                               <span className="ml-16">region : {item.mm_region}</span>
-                                               <span className="ml-16">town_township :{item.mm_town_township}</span>
-                                               <span className="ml-16">qv_tract :{item.mm_qv_tract}</span>
-                                               <span className="ml-12">{`}`}</span>
-                                           </h2>
-                                           <p className="ml-4">_id : {item._id}</p>
-                                           <p className="ml-4">tsp_code : {item.tsp_code}</p>
-                                           <p className="ml-4">region_code : {item.region_code}</p>
-                                           <p className="ml-4">postal_code : {item.postal_code}</p>
-                                           <p className="ml-4">qv_code : {item.qv_code}</p>
-                                       </div>
-                                   ))}
+                                    {data.map((item) => (
+                                        <div key={item.postal_code}>
+                                            <h2 className="flex flex-col">
+                                                <span className="ml-4">en :</span>
+                                                <span className="flex flex-col ml-12">{`{`}</span>
+                                                <span className="ml-16">region : {item.en_region}</span>
+                                                <span className="ml-16">town_township :{item.en_town_township}</span>
+                                                <span className="ml-16">qv_tract :{item.en_qv_tract}</span>
+                                                <span className="ml-12">{`}`}</span>
+                                            </h2>
+                                            <h2 className="flex flex-col">
+                                                <span className="ml-4">mm :</span>
+                                                <span className="flex flex-col ml-12">{`{`}</span>
+                                                <span className="ml-16">region : {item.mm_region}</span>
+                                                <span className="ml-16">town_township :{item.mm_town_township}</span>
+                                                <span className="ml-16">qv_tract :{item.mm_qv_tract}</span>
+                                                <span className="ml-12">{`}`}</span>
+                                            </h2>
+                                            <p className="ml-4">_id : {item._id}</p>
+                                            <p className="ml-4">tsp_code : {item.tsp_code}</p>
+                                            <p className="ml-4">region_code : {item.region_code}</p>
+                                            <p className="ml-4">postal_code : {item.postal_code}</p>
+                                            <p className="ml-4">qv_code : {item.qv_code}</p>
+                                        </div>
+                                    ))}
                                 </span>
                                 {`}`} </span>
                             <span className="ml-8 pb-8">]</span>
