@@ -84,14 +84,14 @@ const _Usage = () => {
     };
 
     return (
-        <div className="grid gap-y-10">
+        <div>
             <div className="font-bold text-2xl flex items-center gap-2">
                 <Box/>
                 <div className="text-yellow-600">
                     Sample Usage
                 </div>
             </div>
-            <div>
+            <div className='mt-6'>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="outline">Code Snippet</Button>
@@ -115,9 +115,9 @@ const _Usage = () => {
                 </DropdownMenu>
             </div>
 
-            <div>
+            <div className='mt-6'>
                 {Ajax && (
-                    <div className="bg-gray-800 text-gray-400 px-4 py-2 w-[365px] sm:w-[850px] rounded-sm">
+                    <div className="bg-gray-800 text-gray-400 px-4 py-2 w-[393px] md:w-[850px] rounded-sm">
                         <div className="flex justify-end m-2">
                             {copyAjax ? (
                                 <>
@@ -140,7 +140,7 @@ const _Usage = () => {
                     </div>
                 )}
             </div>
-            <div className="-mt-10">
+            <div className="mt-6">
                 {JavaScript && (
                     <div className="bg-gray-800 text-gray-400 px-4 py-2 w-[365px] sm:w-[850px] rounded-sm">
                         <div className="flex justify-end m-2">
@@ -165,17 +165,17 @@ const _Usage = () => {
                     </div>
                 )}
             </div>
-            <div className="-mt-20">
+            <div className="mt-6">
                 {Ajax || JavaScript === false && (
                     <div className="bg-gray-700 text-gray-400 sm:mr-[400px] p-4 rounded-sm">
                         Please select one of options!
                     </div>
                 )}
             </div>
-            <div className="-mt-14">
+            <div className="mt-6">
                 <Button variant="outline" onClick={handleOutputAll}>Output</Button>
             </div>
-            <div>
+            <div className='my-6'>
                 {outputAll && (
                     <>
                         <div className="flex flex-col bg-black text-green-400 sm:w-2/3">
