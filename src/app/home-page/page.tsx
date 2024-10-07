@@ -68,9 +68,9 @@ const page = () => {
                                 development needs.
                             </div>
                             <div className="sm:flex justify-center items-center pt-10 sm:gap-14 grid gap-y-4">
-                                <button className="flex justify-between bg-green-400 px-6 py-3 rounded-sm text-white"
+                                <button className="flex justify-between bg-green-400 px-12 py-3 rounded-sm text-white"
                                         onClick={gotoService}>
-                                    <span className="pr-4">Read Docs</span>
+                                    <span className="pr-4">Docs</span>
                                     <Book/>
                                 </button>
                                 <button className="flex justify-between bg-yellow-400 px-12 py-3 rounded-sm text-white"
