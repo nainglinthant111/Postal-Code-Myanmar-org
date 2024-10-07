@@ -1,6 +1,6 @@
 import React from "react";
 import { X } from "lucide-react";
-import { closeDisplayProps, displayProps } from "@/app/types";
+import { closeDisplayProps } from "@/app/types";
 
 const Menu = ({ closeDisplay }: closeDisplayProps) => {
   return (
@@ -9,7 +9,7 @@ const Menu = ({ closeDisplay }: closeDisplayProps) => {
         <div className="mb-4 flex justify-end mr-2 mt-3" onClick={closeDisplay}>
           <X />
         </div>
-        <div className="flex flex-col items-center justify-center pt-52">
+        <div className="flex flex-col items-center justify-center pt-60">
           <a href="/home-page" className="mb-4 font-bold text-xl" onClick={closeDisplay}>
             Home
           </a>
