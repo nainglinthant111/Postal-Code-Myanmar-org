@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import Check from "../../../public/check.png";
-import {Copy} from "lucide-react";
-import {data, dataDetail, regionData} from "../../../Constants";
-import {Separator} from "@/components/ui/separator";
-import {Button} from "@/components/ui/button";
+import { Copy } from "lucide-react";
+import { data, dataDetail, regionData } from "../../../Constants";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
 
 const _Endpoint = () => {
     const [copied, setCopied] = useState(false)
@@ -42,11 +42,11 @@ const _Endpoint = () => {
         setOutput(!output)
     }
     return (
-        <div className="grid gap-y-10">
-            <div className="text-black text-lg leading-tight">
+        <div>
+            <div className="text-black text-lg leading-tight mt-6 font-bold">
                 Get all regions
             </div>
-            <div className="grid grid-cols-9 bg-gray-800 text-gray-400 px-4 py-2 sm:mr-[400px] rounded-sm">
+            <div className="grid grid-cols-9 bg-gray-800 text-gray-400 px-4 py-2 md:mr-[500px] rounded-sm mt-6 sm:mt-6">
                 <div className="col-span-7 break-words">
                     {allText}
                 </div>
@@ -63,11 +63,11 @@ const _Endpoint = () => {
                     )}
                 </div>
             </div>
-            <div>
+            <div className='mt-6'>
                 <Button variant="outline" onClick={handleOutputAll}>Output
                 </Button>
             </div>
-            <div>
+            <div className='mt-6'>
                 {outputAll && (
                     <>
                         <div className="flex flex-col bg-black text-green-400 sm:w-2/3">
@@ -88,10 +88,10 @@ const _Endpoint = () => {
                 )}
             </div>
 
-            <div className="text-black text-lg leading-tight">
+            <div className="text-black text-lg leading-tight font-bold mt-6">
                 Get a single region
             </div>
-            <div className="grid grid-cols-9 bg-gray-800 text-gray-400 px-4 py-2 sm:mr-[400px] rounded-sm">
+            <div className="grid grid-cols-9 bg-gray-800 text-gray-400 px-4 py-2 md:mr-[500px] rounded-sm mt-6">
                 <div className="col-span-7 break-words">
                     {singleText}
                 </div>
@@ -108,7 +108,7 @@ const _Endpoint = () => {
                     )}
                 </div>
             </div>
-            <div className="border m-2 sm:mr-[400px]">
+            <div className="border md:mr-[500px] mt-6">
                 <div className="flex border-b-2">
                     <div className="py-2 px-2 w-1/2 border-r-2">
                         <div>
@@ -140,11 +140,11 @@ const _Endpoint = () => {
                     </div>
                 ))}
             </div>
-            <div>
+            <div className='mt-6'>
                 <Button variant="outline" onClick={handleOutput}>Output
                 </Button>
             </div>
-            <div>
+            <div className='mt-6'>
                 {output && (
                     <>
                         <div className="flex flex-col bg-black text-green-400 sm:w-2/3">
