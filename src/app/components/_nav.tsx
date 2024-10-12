@@ -25,11 +25,16 @@ const _nav = ({toggleDisplay}: displayProps) => {
         router.push("/about");
     };
 
+    const gotoLogin = () => {
+        router.push("/auth/sign-in")
+    }
+
     useEffect(() => {
         router.prefetch("/");
         router.prefetch("/demo");
         router.prefetch("/docs");
         router.prefetch("/about");
+        router.prefetch("/auth/sign-in");
     }, [router]);
     return (
         <div
@@ -60,7 +65,8 @@ const _nav = ({toggleDisplay}: displayProps) => {
                     <Menu/>
                 </div>
                 <div className="hidden sm:block mr-5">
-                    <button className="px-4 py-1.5 border-2 border-blue-500 rounded-lg text-blue-500 text-lg">Login</button>
+                    <button className="px-4 py-1.5 border-2 border-blue-500 rounded-lg text-blue-500 text-lg cursor-pointer"
+                    onClick={gotoLogin}>Login</button>
                 </div>
             </div>
         </div>
