@@ -64,9 +64,8 @@ const _nav = ({toggleDisplay}: displayProps) => {
                 <div className="sm:hidden" onClick={toggleDisplay}>
                     <Menu/>
                 </div>
-                <div className="hidden sm:block mr-5">
-                    <button className="px-4 py-1.5 border-2 border-blue-500 rounded-lg text-blue-500 text-lg cursor-pointer"
-                    onClick={gotoLogin}>Login</button>
+                <div className="cursor-pointer hidden sm:block text-gray-600 text-lg mr-5">
+                     Profile
                 </div>
             </div>
         </div>
