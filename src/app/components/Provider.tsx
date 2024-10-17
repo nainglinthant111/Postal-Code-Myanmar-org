@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 
 const Providers = ({children}: PropsWithChildren<{}>) => {
     const [display, setDisplay] = useState(false);
-    const [isAuthenticated,setIsAuthenticated] = useState(false);
+    const [isAuthenticated,setIsAuthenticated] = useState(true);
     const router = useRouter()
 
     const toggleDisplay = () => {
