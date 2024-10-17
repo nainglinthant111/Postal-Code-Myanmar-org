@@ -27,7 +27,8 @@ const page = () => {
                     <Image
                         src={detail}
                         alt="detail_ing"
-                        className="w-full w-[500px] sm:w-[600px]"
+                        className="w-full sm:w-[600px]"
+                        priority
                     />
                 </div>
                 <div className="font-bold text-2xl flex items-center gap-2 mt-6">
