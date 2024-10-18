@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 const _nav = ({ toggleDisplay }: displayProps) => {
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const gotoHome = () => {
     router.push("/");
