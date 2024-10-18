@@ -25,7 +25,7 @@ const page = () => {
             <div className="w-full md:mt-4">
               <form className="flex flex-col">
                 <div>
-                  Name <span className="text-sm ml-1 text-red-500">(Required)</span>
+                  Name<span className="text-sm ml-1 text-red-500">(Required)</span>
                 </div>
                 <Input
                   type="name"
