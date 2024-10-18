@@ -25,7 +25,7 @@ const page = () => {
             <div className="w-full md:mt-4">
               <form className="flex flex-col">
                 <div>
-                  Name <span className="text-sm ml-1">(Required)</span>
+                  Name <span className="text-sm ml-1 text-red-500">(Required)</span>
                 </div>
                 <Input
                   type="name"
@@ -34,7 +34,7 @@ const page = () => {
                   //onChange={(e) => setName(e.target.value)}
                 />
                 <div className="md:mt-4">
-                  Email<span className="text-sm ml-1">(Required)</span>
+                  Email<span className="text-sm ml-1 text-red-500">(Required)</span>
                 </div>
                 <Input
                   type="email"
@@ -43,7 +43,7 @@ const page = () => {
                   //onChange={(e) => setEmail(e.target.value)}
                 />
                 <div className="md:mt-4">
-                  Password<span className="text-sm ml-1">(Required)</span>
+                  Password<span className="text-sm ml-1 text-red-500">(Required)</span>
                 </div>
                 <Input
                   type="password"
