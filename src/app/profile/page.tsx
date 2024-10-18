@@ -39,6 +39,9 @@ const page = () => {
     setApiKey(false)
   }
 
+  const logout = () => {
+    router.push('/home-page')
+  }
   useEffect(() => {
     router.prefetch("/home-page");
     router.prefetch('/auth/update-password')
@@ -113,6 +116,9 @@ const page = () => {
         <div className="pt-4">
           <div className="text-lg font-bold">Subscription</div>
           <div className="mt-2 text-sm text-gray-500">Free Plan</div>
+        </div>
+        <div className="pt-6" onClick={logout}>
+          <Button>Logout</Button>
         </div>
       </div>
     </div>
