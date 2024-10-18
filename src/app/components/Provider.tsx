@@ -18,7 +18,7 @@ const Providers = ({children}: PropsWithChildren<{}>) => {
         setDisplay(false);
     };
 
-    const authRoute = ["/auth/sign-in","/profile"];
+    const authRoute = ["/auth/sign-in","/profile","/auth/update-password"];
     const signinRoute = !authRoute.includes(pathname);
 
     const queryClient = new QueryClient()
