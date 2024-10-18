@@ -11,6 +11,8 @@ const Page = () => {
   const gotoProfile = () => {
     router.push("/profile");
   };
+  console.log("this is log");
+  
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
       <div className="border rounded-xl p-6 mb-4">
