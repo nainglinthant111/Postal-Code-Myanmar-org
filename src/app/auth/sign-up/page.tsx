@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div className="min-h-screen">
       <div className="flex justify-center items-center min-h-screen mx-32">
-        <div className="rounded-lg shadow-lg w-full md:mx-44">
+        <div className="rounded-lg shadow-lg w-full md:mx-52">
           <div className="md:px-20">
             <div className="flex flex-col justify-center items-center">
               <div className="md:text-3xl font-bold bg-gradient-to-r from-yellow-400 via-green-600 to-red-600 bg-clip-text text-transparent">
