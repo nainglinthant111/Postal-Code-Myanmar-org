@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 const Page = () => {
   const router = useRouter();
   const gotoReset = () => {
-    router.push("/auth/complete");
+    router.push("/auth/otp");
   };
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
