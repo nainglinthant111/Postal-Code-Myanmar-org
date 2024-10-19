@@ -24,7 +24,8 @@ const Providers = ({ children }: PropsWithChildren<{}>) => {
     "/auth/update-password",
     "/auth/sign-up",
     "/auth/forget-password",
-    "/auth/complete"
+    "/auth/complete",
+    "/auth/otp"
   ];
   const signinRoute = !authRoute.includes(pathname);
 
