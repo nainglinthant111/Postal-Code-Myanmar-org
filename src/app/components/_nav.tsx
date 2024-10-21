@@ -6,9 +6,8 @@ import Image from "next/image";
 import logo from "../../../public/myanmar.png";
 import { Button } from "@/components/ui/button";
 
-const _nav = ({ toggleDisplay }: displayProps) => {
+const _nav = ({ toggleDisplay,isAuthenticated }: displayProps) => {
   const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const gotoHome = () => {
     router.push("/");
