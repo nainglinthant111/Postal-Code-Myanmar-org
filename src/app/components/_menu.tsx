@@ -47,7 +47,7 @@ const Menu = ({ closeDisplay, isAuthenticated }: closeDisplayProps) => {
               Profile
             </a>
           ) : (
-            <div>
+            <div className="mt-2">
               <a
                 href="/auth/sign-in"
                 className="px-4 py-1.5 border-2 border-blue-500 rounded-lg text-blue-500 text-lg cursor-pointer"
