@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 const Providers = ({ children }: PropsWithChildren<{}>) => {
   const [display, setDisplay] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const pathname = usePathname();
 
   const toggleDisplay = () => {
@@ -34,11 +35,11 @@ const Providers = ({ children }: PropsWithChildren<{}>) => {
     <QueryClientProvider client={queryClient}>
       {display ? (
         <div className={`popup-menu ${styles.slideIn}`}>
-          <Menu closeDisplay={closeDisplay} />
+          <Menu closeDisplay={closeDisplay} isAuthenticated={isAuthenticated} />
         </div>
       ) : (
         <div>
-          {signinRoute && <Nav toggleDisplay={toggleDisplay} />}
+          {signinRoute && <Nav toggleDisplay={toggleDisplay} isAuthenticated={isAuthenticated} />}
           <div>{children}</div>
         </div>
       )}
