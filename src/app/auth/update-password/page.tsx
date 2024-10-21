@@ -21,37 +21,37 @@ const Page = () => {
       <div className="text-sm text-gray-500 mb-8">
         Must be at least 8 characters.
       </div>
-      <div className="md:w-80 md:mt-4">
+      <div className="w-80 mt-4">
         <div>Current Password</div>
         <Input
           type="password"
           placeholder="Password"
-          className="md:mt-2 border md:py-1 md:px-3 rounded-sm w-full"
+          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
         />
       </div>
-      <div className="md:w-80 mt-4">
+      <div className="w-80 mt-4">
         <div>Password</div>
         <Input
           type="password"
           placeholder="Password"
-          className="md:mt-2 border md:py-1 md:px-3 rounded-sm w-full"
+          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
         />
       </div>
-      <div className="md:w-80 md:mt-4">
+      <div className="w-80 mt-4">
         <div>Confirm Password</div>
         <Input
           type="password"
           placeholder="Password"
-          className="md:mt-2 border md:py-1 md:px-3 rounded-sm w-full"
+          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
         />
       </div>
-      <Button className="w-full max-w-xs md:mt-6" onClick={gotoProfile}>
+      <Button className="w-full max-w-xs mt-6" onClick={gotoProfile}>
         Update
       </Button>
       <Link href="/profile">
-        <div className="flex md:mt-6 cursor-pointer">
+        <div className="flex mt-6 cursor-pointer">
           <MoveLeft />
-          <span className="md:ml-2">Back to Profile</span>
+          <span className="ml-2">Back to Profile</span>
         </div>
       </Link>
     </div>
