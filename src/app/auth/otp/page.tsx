@@ -40,13 +40,13 @@ const Page = () => {
           <InputOTPSlot index={5} />
         </InputOTPGroup>
       </InputOTP>
-      <Button className="w-full max-w-xs md:mt-6" onClick={gotoComplete}>
+      <Button className="w-full max-w-xs mt-6" onClick={gotoComplete}>
         Continue
       </Button>
       <Link href="/auth/sign-in">
-        <div className="flex md:mt-6 cursor-pointer">
+        <div className="flex mt-6 cursor-pointer">
           <MoveLeft />
-          <span className="md:ml-2">Back to log in</span>
+          <span className="ml-2">Back to log in</span>
         </div>
       </Link>
     </div>
