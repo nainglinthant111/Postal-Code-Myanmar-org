@@ -1,61 +1,136 @@
 "use client";
-import React from "react";
-import { KeyRound, MoveLeft } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { MoveLeft } from "lucide-react";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 
-const Page = () => {
+const formSchema = z
+  .object({
+    currentPassword: z.string().min(8, "Password must be at least 8 characters long"),
+    password: z.string().min(8, "Password must be at least 8 characters long"),
+    confirmPassword: z
+      .string()
+      .min(8, "Password must be at least 8 characters long"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    path: ["confirmPassword"],
+    message: "Passwords do not match",
+  });
+
+const page = () => {
   const router = useRouter();
-  const gotoProfile = () => {
-    router.push("/profile");
+  const backToMain = () => {
+    router.push("/home-page");
   };
-  
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      currentPassword: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  function onSubmit(data: z.infer<typeof formSchema>) {
+    console.log(data);
+    //router.push("/auth/sign-in")
+  }
+
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen">
-      <div className="border rounded-xl p-6 mb-4">
-        <KeyRound />
-      </div>
-      <div className="text-3xl font-bold mb-4">Set New Password</div>
-      <div className="text-sm text-gray-500 mb-8">
-        Must be at least 8 characters.
-      </div>
-      <div className="w-80 mt-4">
-        <div>Current Password</div>
-        <Input
-          type="password"
-          placeholder="Password"
-          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
-        />
-      </div>
-      <div className="w-80 mt-4">
-        <div>Password</div>
-        <Input
-          type="password"
-          placeholder="Password"
-          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
-        />
-      </div>
-      <div className="w-80 mt-4">
-        <div>Confirm Password</div>
-        <Input
-          type="password"
-          placeholder="Password"
-          className="mt-2 border md:py-1 md:px-3 rounded-sm w-full"
-        />
-      </div>
-      <Button className="w-full max-w-xs mt-6" onClick={gotoProfile}>
-        Update
-      </Button>
-      <Link href="/profile">
-        <div className="flex mt-6 cursor-pointer">
+    <div className="flex justify-center items-center min-h-screen mx-6 md:mx-32">
+      <div className="rounded-lg shadow-lg w-full md:mx-56">
+        <div onClick={backToMain} className="cursor-pointer mt-4 ml-4">
           <MoveLeft />
-          <span className="ml-2">Back to Profile</span>
         </div>
-      </Link>
+        <div className="md:px-20 px-4 mt-4 md:mt-0">
+          <div className="flex flex-col justify-center items-center">
+            <div className="md:text-3xl text-2xl font-bold bg-gradient-to-r from-yellow-400 via-green-600 to-red-600 bg-clip-text text-transparent">
+              MyanmarPostalCode
+            </div>
+            <div className="md:text-2xl text-lg text-gray-500 font-bold mt-4">
+              Update Password
+            </div>
+            <div className="w-full my-10">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-4"
+                >
+                  <FormField
+                    control={form.control}
+                    name="currentPassword"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Current Password</FormLabel>
+                        <FormControl>
+                          <Input
+                          type="password"
+                            placeholder="Please Enter Current Password"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="password"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Password</FormLabel>  
+                        <FormControl>
+                          <Input
+                            type="password"
+                            placeholder="Please Enter Password"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="confirmPassword"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>ConfirmPassword</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="password"
+                            placeholder="Please Enter Confirm Password"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <div className="my-4">
+                    <Button className="mt-4 w-full" type="submit">
+                      Update
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Page;
+export default page;
