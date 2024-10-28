@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 const Providers = ({ children }: PropsWithChildren<{}>) => {
   const [display, setDisplay] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const pathname = usePathname();
 
   const toggleDisplay = () => {

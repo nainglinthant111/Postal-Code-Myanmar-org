@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import { displayProps } from "../types";
 import Image from "next/image";
 import logo from "../../../public/myanmar.png";
-import { Button } from "@/components/ui/button";
 
 const _nav = ({ toggleDisplay,isAuthenticated }: displayProps) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
 
   const gotoHome = () => {
