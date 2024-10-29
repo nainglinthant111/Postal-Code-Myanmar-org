@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Myanmar Postal Code API
 
-## Getting Started
+The Myanmar Postal Code API provides free and easy access to accurate postal code data for various locations across Myanmar. Designed for developers, businesses, and individuals, this API simplifies the integration of postal code functionality into web and mobile applications, offering reliable geographic information in JSON format.
 
-First, run the development server:
+[Visit the Website](https://postalcode-myanmar.vercel.app/)
+
+---
+
+## Table of Contents
+- [Overview](#overview)
+- [Documentation](#documentation)
+- [Quick Start](#quick-start)
+- [Sample Usage](#sample-usage)
+- [About Us](#about-us)
+
+---
+
+## Overview
+
+The Myanmar Postal Code API is a free, open-source solution for retrieving accurate postal code and township information for locations across Myanmar. Whether you're building a website, a mobile app, or integrating location data into your software, our API provides reliable postal code information to enhance your project.
+
+---
+
+## Documentation
+
+Our API supports various project types that need Myanmar's postal code and township data in JSON format. This data can be used for:
+- Location-based services
+- Address validation and autofill
+- Geographic data visualization
+- Data analysis related to Myanmar's regions and postal zones
+
+### Available Endpoints
+
+1. **Get all regions**  
+   Retrieve a list of all regions with postal codes.
+   GET https://myanmar-postal-code.vercel.app/api/data/myanmar/regions
+
+2. **Get postal code by region**  
+   Retrieve postal codes for a specific region.
+   GET https://myanmar-postal-code.vercel.app/api/data/myanmar/regions/{region_name}
+3. **Get postal code details**  
+   Retrieve detailed information for a specific postal code.
+   GET https://myanmar-postal-code.vercel.app/api/data/myanmar/postalcode/{postal_code}
+
+
+> **Note**: Replace `{region_name}` and `{postal_code}` with the specific region or postal code of interest.
+
+---
+
+## Quick Start
+
+To use the Myanmar Postal Code API, follow these steps:
+
+1. **Clone the Repository**
+```bash
+git clone https://github.com/your-repo/myanmar-postal-code-api.git
+cd myanmar-postal-code-api
+```
+2. **Run the Server**
+
+If you want to run a local server (if applicable):
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Access the API**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start making requests using the endpoint URLs provided in the documentation.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Sample Usage
 
-## Learn More
+To quickly test how the API works, you can make a request using the following example in JavaScript:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+fetch('https://myanmar-postal-code.vercel.app/api/data/myanmar/regions')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## About Us
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We are committed to delivering up-to-date, accurate postal code data to developers, businesses, and individual users. Our mission is to simplify the integration of postal code information into applications, websites, and software, empowering users to enhance their projects with reliable and current geographic information.
 
-## Deploy on Vercel
+Whether you're a developer, a business looking to streamline address input, or simply interested in Myanmar’s geographic data, the Myanmar Postal Code API is here to serve your needs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contributing
+
+We welcome contributions to improve the Myanmar Postal Code API! If you'd like to contribute:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature-name).
+3. Make your changes.
+4. Submit a pull request.
+
+For questions, issues, or suggestions, please contact us or open an issue on GitHub.
+
+Enhance your project with Myanmar's reliable postal data today!
