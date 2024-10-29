@@ -44,7 +44,7 @@ Our API supports various project types that need Myanmar's postal code and towns
    GET https://myanmar-postal-code.vercel.app/api/data/myanmar/regions/{region_name}
 ```
 
-> **Note**: Replace `{region_name}` with the specific region or postal code of interest.
+> **Note**: Replace `{region_name}` with the specific region.
 
 ---
 
