@@ -60,7 +60,7 @@ To use the Myanmar Postal Code API, follow these steps:
 
 1. **Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/myanmar-postal-code-api.git
+git clone git@github.com:nainglinthant111/Postal-Code-Myanmar-org.git
 cd myanmar-postal-code-api
 ```
 2. **Run the Server**
