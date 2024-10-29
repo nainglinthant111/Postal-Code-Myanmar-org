@@ -31,17 +31,24 @@ Our API supports various project types that need Myanmar's postal code and towns
 
 ### Available Endpoints
 
-1. **Get all regions**  
+1. **Get all regions**
+
    Retrieve a list of all regions with postal codes.
+```bash
    GET https://myanmar-postal-code.vercel.app/api/data/myanmar/regions
+```
 
 2. **Get postal code by region**  
    Retrieve postal codes for a specific region.
+```bash
    GET https://myanmar-postal-code.vercel.app/api/data/myanmar/regions/{region_name}
-3. **Get postal code details**  
-   Retrieve detailed information for a specific postal code.
-   GET https://myanmar-postal-code.vercel.app/api/data/myanmar/postalcode/{postal_code}
+```
+3. **Get postal code details**
 
+   Retrieve detailed information for a specific postal code.
+```bash
+   GET https://myanmar-postal-code.vercel.app/api/data/myanmar/postalcode/{postal_code}
+```
 
 > **Note**: Replace `{region_name}` and `{postal_code}` with the specific region or postal code of interest.
 
